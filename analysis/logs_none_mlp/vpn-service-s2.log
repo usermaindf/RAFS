@@ -1,0 +1,626 @@
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=1 base_time=20.3255s selection_time=0.0000s explain_time=3.5295s verification_time=0.1022s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=2 base_time=6.0663s selection_time=35.8749s explain_time=3.4802s verification_time=0.0963s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=3 base_time=7.7618s selection_time=32.8292s explain_time=3.3661s verification_time=0.1170s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=4 base_time=6.0241s selection_time=34.1513s explain_time=3.2699s verification_time=0.1130s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=5 base_time=7.7706s selection_time=30.9099s explain_time=3.1123s verification_time=0.1214s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=6 base_time=13.5376s selection_time=68.8908s explain_time=3.1167s verification_time=0.1114s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=7 base_time=6.0685s selection_time=33.9776s explain_time=3.1266s verification_time=0.1022s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=8 base_time=7.4040s selection_time=37.7374s explain_time=3.0004s verification_time=0.1121s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=9 base_time=9.6860s selection_time=47.5116s explain_time=2.9627s verification_time=0.1165s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=10 base_time=6.0118s selection_time=44.5959s explain_time=2.5152s verification_time=0.0941s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=11 base_time=9.6327s selection_time=37.2302s explain_time=2.4924s verification_time=0.0898s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=12 base_time=6.0694s selection_time=35.2518s explain_time=2.7594s verification_time=0.1023s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=13 base_time=6.3790s selection_time=38.5789s explain_time=2.4200s verification_time=0.0960s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=14 base_time=7.8572s selection_time=59.7310s explain_time=2.6344s verification_time=0.1121s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=15 base_time=7.6449s selection_time=53.8782s explain_time=2.7415s verification_time=0.1109s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=16 base_time=7.0893s selection_time=34.2995s explain_time=2.5513s verification_time=0.1045s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=17 base_time=3.8585s selection_time=36.5064s explain_time=2.5309s verification_time=0.1480s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=18 base_time=19.3037s selection_time=47.7761s explain_time=2.5214s verification_time=0.1921s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=19 base_time=9.6694s selection_time=35.6071s explain_time=2.2692s verification_time=0.0889s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=20 base_time=13.9425s selection_time=68.0398s explain_time=2.3530s verification_time=0.0921s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=21 base_time=8.0662s selection_time=38.9617s explain_time=2.3505s verification_time=0.0970s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=22 base_time=6.2130s selection_time=38.3879s explain_time=2.3265s verification_time=0.1050s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=23 base_time=13.9710s selection_time=44.0233s explain_time=2.2006s verification_time=0.0936s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=24 base_time=4.1408s selection_time=24.8318s explain_time=2.1421s verification_time=0.0953s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=25 base_time=6.4465s selection_time=33.0878s explain_time=2.1493s verification_time=0.1103s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=26 base_time=13.9478s selection_time=46.8290s explain_time=2.0554s verification_time=0.1044s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=27 base_time=14.9498s selection_time=50.7725s explain_time=1.9826s verification_time=0.0913s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=28 base_time=10.1890s selection_time=54.2657s explain_time=1.9581s verification_time=0.1048s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=29 base_time=6.4333s selection_time=50.9431s explain_time=1.9591s verification_time=0.1096s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=30 base_time=6.3889s selection_time=48.0135s explain_time=1.8774s verification_time=0.0977s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=31 base_time=8.9734s selection_time=50.0428s explain_time=1.8004s verification_time=0.0890s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=32 base_time=9.5361s selection_time=41.5103s explain_time=1.6473s verification_time=0.0718s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=33 base_time=11.8553s selection_time=33.7260s explain_time=1.5660s verification_time=0.0962s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=34 base_time=21.7428s selection_time=64.6897s explain_time=2.3027s verification_time=0.1270s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=35 base_time=13.3061s selection_time=53.7876s explain_time=1.6629s verification_time=0.1008s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=36 base_time=16.5268s selection_time=58.1539s explain_time=1.5948s verification_time=0.0979s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=37 base_time=10.4259s selection_time=33.4407s explain_time=1.5493s verification_time=0.0890s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=38 base_time=6.6137s selection_time=42.9968s explain_time=1.5144s verification_time=0.1043s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=39 base_time=9.3259s selection_time=48.5239s explain_time=1.4092s verification_time=0.0882s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=40 base_time=7.9355s selection_time=49.7086s explain_time=1.4140s verification_time=0.0993s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=41 base_time=5.7301s selection_time=32.7882s explain_time=1.3619s verification_time=0.0922s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=42 base_time=10.5557s selection_time=38.9952s explain_time=1.3175s verification_time=0.1014s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=43 base_time=9.5775s selection_time=49.5722s explain_time=1.4037s verification_time=0.0934s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=44 base_time=9.3019s selection_time=47.1012s explain_time=1.2264s verification_time=0.0884s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=45 base_time=15.3134s selection_time=54.5874s explain_time=1.2429s verification_time=0.0929s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=46 base_time=14.3767s selection_time=63.5799s explain_time=1.2210s verification_time=0.0924s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=47 base_time=29.7418s selection_time=80.8127s explain_time=1.1395s verification_time=0.0899s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=48 base_time=14.6283s selection_time=81.0437s explain_time=1.1336s verification_time=0.0767s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=49 base_time=10.2574s selection_time=51.1061s explain_time=1.1306s verification_time=0.0978s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=50 base_time=21.5590s selection_time=97.5643s explain_time=1.1088s verification_time=0.1147s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=51 base_time=16.5385s selection_time=76.5218s explain_time=1.0350s verification_time=0.0914s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=52 base_time=25.0021s selection_time=69.3467s explain_time=0.9478s verification_time=0.0891s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=53 base_time=15.3244s selection_time=89.1523s explain_time=0.9934s verification_time=0.0909s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=54 base_time=4.1283s selection_time=38.8077s explain_time=0.8950s verification_time=0.0808s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=55 base_time=4.1771s selection_time=22.3419s explain_time=0.8883s verification_time=0.0970s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=56 base_time=4.1299s selection_time=19.2530s explain_time=0.7984s verification_time=0.0827s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=57 base_time=3.4128s selection_time=20.1777s explain_time=0.8167s verification_time=0.0886s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=58 base_time=3.7268s selection_time=19.4353s explain_time=0.7949s verification_time=0.1713s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=59 base_time=4.1515s selection_time=49.0102s explain_time=0.7576s verification_time=0.0880s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=60 base_time=24.2017s selection_time=39.1421s explain_time=0.7345s verification_time=0.0844s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=61 base_time=3.6662s selection_time=18.2311s explain_time=0.6878s verification_time=0.0943s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=62 base_time=4.4900s selection_time=23.1536s explain_time=0.7353s verification_time=0.0881s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=63 base_time=27.3274s selection_time=57.5153s explain_time=0.6094s verification_time=0.0843s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=64 base_time=4.4159s selection_time=22.5289s explain_time=0.6038s verification_time=0.0813s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=65 base_time=4.8349s selection_time=18.3812s explain_time=0.5734s verification_time=0.0883s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=66 base_time=7.0083s selection_time=62.5670s explain_time=0.5773s verification_time=0.0873s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=67 base_time=11.2891s selection_time=34.6110s explain_time=0.5525s verification_time=0.0829s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=68 base_time=7.2287s selection_time=32.9181s explain_time=0.4982s verification_time=0.0804s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=69 base_time=16.7448s selection_time=37.1274s explain_time=0.4934s verification_time=0.0860s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=70 base_time=20.4375s selection_time=37.7456s explain_time=0.4614s verification_time=0.0851s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=71 base_time=4.8636s selection_time=21.5942s explain_time=0.4427s verification_time=0.0858s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=72 base_time=8.5866s selection_time=40.2467s explain_time=0.4197s verification_time=0.0931s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=73 base_time=7.9113s selection_time=49.3945s explain_time=0.3987s verification_time=0.0836s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=74 base_time=7.5129s selection_time=33.3012s explain_time=0.3894s verification_time=0.0840s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=75 base_time=8.5366s selection_time=59.2225s explain_time=0.3433s verification_time=0.0781s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=76 base_time=5.9994s selection_time=34.9563s explain_time=0.3306s verification_time=0.0849s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=77 base_time=3.7566s selection_time=18.6146s explain_time=0.2889s verification_time=0.0794s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=78 base_time=7.5436s selection_time=24.1114s explain_time=0.2756s verification_time=0.0869s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=79 base_time=7.5310s selection_time=24.3595s explain_time=0.2711s verification_time=0.0865s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=80 base_time=3.8182s selection_time=18.1251s explain_time=0.1859s verification_time=0.0657s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=81 base_time=6.2418s selection_time=26.2702s explain_time=0.2215s verification_time=0.0879s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=82 base_time=6.1880s selection_time=23.6584s explain_time=0.2049s verification_time=0.0841s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=83 base_time=2.9630s selection_time=16.8498s explain_time=0.1824s verification_time=0.0835s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=84 base_time=13.7038s selection_time=30.4868s explain_time=0.1454s verification_time=0.0814s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=85 base_time=3.1520s selection_time=23.8351s explain_time=0.1204s verification_time=0.0701s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=86 base_time=5.9520s selection_time=18.9638s explain_time=0.1048s verification_time=0.0747s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=87 base_time=12.3012s selection_time=31.0260s explain_time=0.0862s verification_time=0.0719s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=88 base_time=7.4686s selection_time=21.7339s explain_time=0.0756s verification_time=0.0762s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=89 base_time=2.5645s selection_time=11.5060s explain_time=0.0514s verification_time=0.0497s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=90 base_time=2.4944s selection_time=11.4932s explain_time=0.0370s verification_time=0.0676s
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Training] Start training NeuralNetTorch
+[Timing Summary] iter=91 base_time=2.4879s selection_time=5.5553s explain_time=0.0231s verification_time=0.0669s

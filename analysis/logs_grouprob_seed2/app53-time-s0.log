@@ -1,0 +1,143 @@
+[Training] Start training RandomForestGini
+[Timing Summary] iter=1 base_time=10.6219s selection_time=0.0000s explain_time=0.4881s verification_time=1.2374s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=2 base_time=7.9087s selection_time=45.8443s explain_time=0.4693s verification_time=1.3735s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=3 base_time=6.7653s selection_time=35.4371s explain_time=0.6391s verification_time=2.8299s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=4 base_time=6.1677s selection_time=36.3046s explain_time=0.5110s verification_time=1.2298s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=5 base_time=7.2781s selection_time=34.6287s explain_time=0.7822s verification_time=1.6957s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=6 base_time=5.6225s selection_time=32.1683s explain_time=0.4897s verification_time=1.6495s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=7 base_time=5.6803s selection_time=30.1397s explain_time=0.6367s verification_time=1.4731s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=8 base_time=5.9978s selection_time=31.6328s explain_time=0.4197s verification_time=1.3420s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=9 base_time=4.2787s selection_time=28.9691s explain_time=0.2913s verification_time=0.7636s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=10 base_time=4.1502s selection_time=21.7839s explain_time=0.2718s verification_time=0.7702s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=11 base_time=4.2181s selection_time=19.0913s explain_time=0.2642s verification_time=0.7554s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=12 base_time=3.8394s selection_time=18.1778s explain_time=0.2731s verification_time=0.7470s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=13 base_time=3.8104s selection_time=17.7810s explain_time=0.2879s verification_time=0.7183s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=14 base_time=3.5447s selection_time=17.4830s explain_time=0.2573s verification_time=0.7533s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=15 base_time=3.4355s selection_time=17.1744s explain_time=0.2474s verification_time=0.7963s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=16 base_time=3.6817s selection_time=17.0110s explain_time=0.2778s verification_time=0.7465s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=17 base_time=3.3728s selection_time=16.0063s explain_time=0.2760s verification_time=0.6894s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=18 base_time=3.3405s selection_time=16.3300s explain_time=0.2680s verification_time=0.7336s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=19 base_time=3.2830s selection_time=15.5147s explain_time=0.2709s verification_time=0.6985s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=20 base_time=3.0861s selection_time=11.4259s explain_time=0.2640s verification_time=0.6956s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=21 base_time=3.3822s selection_time=7.7065s explain_time=0.2711s verification_time=0.7365s
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Training] Start training RandomForestGini
+[Timing Summary] iter=22 base_time=2.6082s selection_time=4.7787s explain_time=0.2265s verification_time=0.5428s
