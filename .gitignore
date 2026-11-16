@@ -8,10 +8,10 @@ figures/
 !analysis/logs*/*.log
 .DS_Store
 Thumbs.db
-data/
-dataset*/
-third_party/
+/data/
+/dataset*/
+/third_party/
 *.pcap
 *.pcapng
 *.pkl
-models*/
+/models*/
