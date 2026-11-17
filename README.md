@@ -1,52 +1,107 @@
 # RAFS: Redundancy-Aware Field Search
 
-论文《冗余感知的协议字段级捷径搜索：面向可靠的加密流量分类》的项目自有实现与实验结果。
+Project-authored algorithm extensions, recorded experiments, and reproducibility tools for reliable encrypted traffic classification under distribution shift.
 
-不分发第三方 ShortcutCatcher 基线源码、原始特征表、含原始特征列的扩展表、抓包或权重。训练需另行取得兼容基线和数据；历史结果分析和绘图无需这些外部材料。
+RAFS groups feature columns into complete protocol fields and jointly evaluates single-field and field-pair removals. Candidate selection uses deployment validation accuracy; the deployed round is selected by validation macro F1-score. The held-out deployment test set is used for evaluation.
 
-| 路径 | 内容 |
+## Repository contents
+
+| Path | Contents |
 |---|---|
-| `src/` | 项目新增的字段分组、联合搜索、对照变体和集成入口 |
-| `preprocessing/` | 项目编写的头部提取、行匹配、相对特征构造程序 |
-| `results/` | 本项目实测逐轮统计 CSV 和图表数值快照 |
-| `analysis/` | 统计与绘图脚本、去除本机路径后的训练计数日志 |
-| `reproduce.py` | 外部代码与数据运行入口，以及发布文件校验 |
-| `SHA256SUMS` | 全包校验清单 |
+| `src/` | Field grouping, joint search, comparison variants, and the RAFS integration entry point |
+| `preprocessing/` | Header extraction, row matching, and relative-feature construction implemented for this project |
+| `results/` | Recorded per-round experiment CSVs and the frozen figure-data snapshot |
+| `analysis/` | English statistical reports, report generators, paper-figure code, and compact training-count logs |
+| `reproduce.py` | Experiment launcher for an externally supplied baseline and feature tables; release-file verification |
+| `SHA256SUMS` | Checksums of the distributed project files |
 
-## 环境与历史结果复算
+Third-party ShortcutCatcher source code, original feature tables, augmented tables containing original feature columns, packet captures, and model weights are **not included**. Obtain compatible baseline code and data separately. Archived-result analysis and figure generation work without those external materials.
 
-建议 Python 3.10 独立环境。历史实验使用 Python 3.9、AutoGluon 1.4.0，关键依赖版本见 requirements。未复制依赖源码。RF 使用 CPU，MLP 使用 PyTorch；系统与依赖不同可能产生数值差异。
+## Environment
+
+Use an isolated Python 3.10 environment and install the pinned dependencies:
 
 ```sh
+python -m venv .venv
+# Linux/macOS: source .venv/bin/activate
+# Windows PowerShell: .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
+```
+
+Historical experiments used Python 3.9 and AutoGluon 1.4.0. Random forests run on CPU; the MLP uses AutoGluon NeuralNetTorch. Platform and dependency differences can affect numerical results. Dependency source code is not vendored.
+
+## Analyze the archived experiments
+
+Run these commands from the repository root:
+
+```sh
 python reproduce.py --verify
+python analysis/compare.py
 python analysis/seeds_report.py
 python analysis/stats_tests.py
 python analysis/sens_report.py
 python analysis/mlp_report.py
+```
+
+The scripts regenerate the English Markdown reports in `analysis/` from recorded measurements. They report per-seed results, paired differences, sensitivity, retraining costs, and the documented statistical tests. Regeneration updates report timestamps, so a later checksum verification will flag intentionally regenerated reports until the release checksums are refreshed.
+
+`SEEDS.md` uses seeds 0–2. `SENS.md` includes the additional VPN seeds 0–9. The MLP report lists VPN seeds 0–2 and App seed 0 for its historical comparison; additional recorded App MLP seeds remain available in the CSV archive. Read the scope and round-limit notes in each report before comparing numbers.
+
+## Recreate the current English paper figures
+
+```sh
 python analysis/plot_figures.py
 ```
 
-统计脚本读取已记录的真实实验数据。图 3–11 使用 `results/figure_data.json` 冻结快照，输出 SVG/PDF/PNG；图 3 机制测量没有独立批量生成程序。中文绘图需安装宋体或 Noto Serif CJK SC。`--refresh-data` 不适用于此包。重新生成 Markdown 会更新时间戳，此后校验清单也需更新。
+This produces figures 3–11 as editable-text SVGs, vector PDFs, and 450-dpi PNG previews under `figures/`. It uses `results/figure_data.json` and does not retrain models. Labels, legends, axis titles, and annotations are in English. All text is dark; the method palette and chart layouts match the current manuscript figures.
 
-## 从头训练：自行提供基线和数据
+The plotting code includes faceted bars, paired seed plots, bubble matrices, annotated reliability matrices, and nested retraining-cost bars. These are project-authored Matplotlib implementations informed by the [SciDraw Gallery](https://avi7ii.github.io/scidraw-gallery/); template IDs are listed in `analysis/plot_figures.py`. No gallery source code, tutorial prose, or sample datasets are bundled. Times New Roman is used when available, with DejaVu Serif as a portable fallback. CJK fonts are not required.
 
-`--baseline-dir` 指向自行取得的 ShortcutCatcher 兼容实现，需有 `loop.py`、`model.py`、`explain.py`、`noise.py`。Loop 需支持 `set_data`、`iterate_window`、`save_importances` 和 `save_iteration_time` 接口。本包在运行时引用这些外部模块，不复制实现。
+Figure 3 contains the mechanism measurements recorded for the paper; this repository does not include a separate batch program to rerun those specific interventions. Figures 1–2 are manuscript diagrams and are not generated by this analysis script. The frozen snapshot has English metadata; its numerical measurements are unchanged.
 
-`--data-root` 指向外部目录，其中有 `per-flow/<setting>/{train,val,test,visible,invisible}_normalized.csv`。普通实验需 116 特征列和 `class` 标签；相对特征实验需另增 25 列相对值。9 设置为 `vpn-service`、`app53-time`、`app53-version` 各自的 `s0/s1/s2`。
+## Train from scratch with external code and data
+
+Provide an independently obtained ShortcutCatcher-compatible baseline through `--baseline-dir`. It must contain `loop.py`, `model.py`, `explain.py`, and `noise.py`. The external `Loop` class must implement the interfaces used by `src/rafs.py`, including `set_data`, `iterate_window`, `save_importances`, and `save_iteration_time`. The adapter has been smoke-tested against the local baseline snapshot; compatibility with every upstream version is not guaranteed.
+
+The external feature directory supplied through `--data-root` must have this structure:
+
+```text
+dataset/
+└── per-flow/
+    ├── vpn-service-s0/
+    │   ├── train_normalized.csv
+    │   ├── val_normalized.csv
+    │   ├── test_normalized.csv
+    │   ├── visible_normalized.csv
+    │   └── invisible_normalized.csv
+    └── ...
+```
+
+The nine settings are `vpn-service`, `app53-time`, and `app53-version`, each with scenarios `s0`, `s1`, and `s2`. Standard tables contain 116 feature columns and the `class` label. Relative-feature experiments require 25 additional relative-value columns. `visible` is the deployment validation set V; `invisible` is the held-out deployment test set C.
 
 ```sh
-# 替换外部文件路径
+# Replace both external paths before running.
 python reproduce.py --baseline-dir /path/to/ShortcutCatcher --data-root /path/to/dataset --datasets vpn-service-s2 --variants grouppair --seeds 0 --dry-run
 python reproduce.py --baseline-dir /path/to/ShortcutCatcher --data-root /path/to/dataset
 ```
 
-默认 9 设置 × 3 种子 × none/group/grouppair，w=5、k=4、最多 100 轮。可选 `--seeds 0 1 2 3 4 5 6 7 8 9`、`--pair-top 3/5`、`--window 3/7`、`--variants grouprel grouppairrel`（仅 App，需相对特征目录）。`--model NeuralNetTorch` 自动使用 permutation importance；论文仅在三个 S2 上评估 MLP。历史 App S2 基线 34 轮、RAFS 100 轮；VPN 两者均 100 轮，需分别指定 `--rounds`。
+Defaults: nine settings, seeds 0–2, variants `none`, `group`, and `grouppair`, single-field width w=5, field-pair screening k=4, and a maximum of 100 rounds. `none` is the column-wise baseline, `group` is the field-grouping ablation, and `grouppair` is RAFS. Other available variants include `grouprob`, `groupshift`, `grouprel`, and `grouppairrel`.
 
-新输出写入 `runs/`，不覆盖历史结果；若已有日志，请换用新的 `--run-dir`。汇总新结果时，将环境变量 `RAFS_RESULTS_ROOT` 和 `RAFS_LOG_ROOT` 都设为运行目录绝对路径，再执行统计脚本。
+Useful options:
 
-## 特征重建与验证边界
+- VPN seed extension: `--datasets vpn-service-s0 vpn-service-s1 vpn-service-s2 --seeds 0 1 2 3 4 5 6 7 8 9`.
+- Sensitivity: `--pair-top 3` or `--pair-top 5`; `--window 3` or `--window 7`.
+- Relative features: `--variants grouprel grouppairrel` with the external relative-feature directory; VPN is skipped.
+- MLP: `--model NeuralNetTorch`, which enables permutation importance. Evaluate the three S2 settings. Historical App comparisons use 34 baseline rounds and 100 RAFS rounds; VPN uses 100 rounds for both methods. Set `--rounds` and `--seeds` explicitly to match a specific archived comparison.
 
-项目自有的相对特征程序依次为 `extract_netd.py`、`match_rows.py`、`build_rel.py`，参数见脚本头部。NETD 原始数据与基线特征须自行取得；中间 pickle、第三方标签和特征表不分发。
+New experiment outputs are written under `runs/`. Existing run logs are protected against overwriting; choose a new `--run-dir` for another run. To analyze newly generated results, set both `RAFS_RESULTS_ROOT` and `RAFS_LOG_ROOT` to the absolute run-directory path before invoking the relevant report generator. The default configuration reads the archived results.
 
-论文方法基于 ShortcutCatcher 并使用 AutoGluon，请引用原工作。项目自有代码尚未指定开源许可证，不替第三方材料授予许可。已验证历史统计和绘图；集成入口仅对本地外部基线验证，不保证所有上游版本兼容。
+## Rebuild relative features
+
+The project-authored preprocessing chain is `extract_netd.py`, `match_rows.py`, then `build_rel.py`, under `preprocessing/`. Their docstrings describe the arguments. Obtain NETD packet captures and baseline feature tables independently. Intermediate pickle files, original labels, and third-party feature tables are not distributed.
+
+## Attribution and validation scope
+
+The method builds on ShortcutCatcher and uses AutoGluon. Cite the original works when using their methods. No license has yet been selected for the project-authored code; this repository does not grant rights to third-party materials.
+
+The English release has been checked by regenerating archived reports and all nine analysis figures, verifying that recorded CSVs and numerical snapshot values remain unchanged, and exercising the external-baseline integration entry point. A full retraining of every experiment has not been repeated on a fresh system.

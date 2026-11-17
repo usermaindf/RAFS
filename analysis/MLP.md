@@ -1,32 +1,32 @@
-# 第 4 步：换成 MLP 分类器（场景 S2，对应 ShortcutCatcher 表 4）
+# MLP evaluation in S2 (comparison with ShortcutCatcher Table 4)
 
-最后更新：2026-11-16 10:55（运行中每 10 分钟自动刷新；手动：`python mlp_report.py`）
+Last updated: 2026-11-17 11:37 (Regenerate manually with: `python mlp_report.py`)
 
-设置：AutoGluon NeuralNetTorch 默认超参数，置换重要性，窗口 5（与原论文表 4 相同）。
-- VPN S2：与原论文完全相同（100 轮），MLP 种子 0、1、2，CPU。
-- App-Time / App-Version S2：MLP 单次训练约 200 秒，原版完整跑一次约需 28 小时，因此改为**等计算量对比**：原版限 34 轮（约 200 次重训），本文方法跑完为止（约 200 次重训）。只用种子 0，GPU。
+Configuration: AutoGluon NeuralNetTorch defaults, permutation importance, window 5, following upstream Table 4.
+- VPN S2: 100 rounds, MLP seeds 0, 1 and 2, on CPU.
+- App-Time / App-Version S2: recorded training took about 200 seconds per fit; a full baseline search would take about 28 hours. The report uses a **matched-compute comparison**: the baseline is capped at 34 rounds (about 200 retrainings), while RAFS runs to completion (about 200 retrainings). This report lists App seed 0 on GPU.
 
-| 运行 | 状态 | F1⁰(C) | F1*(C) | 最佳轮 / 已跑轮数 | 到最佳轮的重训次数 | 总重训次数 |
+| Run | Status | F1⁰(C) | F1*(C) | Best / completed rounds | Retrainings to best round | Total retrainings |
 |---|---|---:|---:|---:|---:|---:|
-| VPN S2 · 原版 · 种子0 | 完成 | 11.8 | 41.4 | 57 / 91 | 337 | 535 |
-| VPN S2 · 原版 · 种子1 | 完成 | 16.2 | 13.1 | 46 / 91 | 271 | 535 |
-| VPN S2 · 原版 · 种子2 | 完成 | 21.2 | 51.9 | 54 / 91 | 319 | 535 |
-| VPN S2 · 分组+联合搜索 · 种子0 | 完成 | 11.8 | 47.9 | 14 / 17 | 157 | 187 |
-| VPN S2 · 分组+联合搜索 · 种子1 | 完成 | 16.2 | 40.9 | 12 / 19 | 133 | 211 |
-| VPN S2 · 分组+联合搜索 · 种子2 | 完成 | 21.2 | 49.2 | 12 / 18 | 133 | 204 |
-| App-Time S2 · 原版 · 种子0 | 完成 | 9.0 | 14.2 | 10 / 34 | 55 | 199 |
-| App-Version S2 · 原版 · 种子0 | 完成 | 12.2 | 22.8 | 17 / 34 | 97 | 199 |
-| App-Time S2 · 分组+联合搜索 · 种子0 | 完成 | 9.0 | 27.1 | 15 / 16 | 169 | 176 |
-| App-Version S2 · 分组+联合搜索 · 种子0 | 完成 | 12.2 | 29.3 | 15 / 15 | 164 | 164 |
+| VPN S2 · Baseline · seed 0 | Completed | 11.8 | 41.4 | 57 / 91 | 337 | 535 |
+| VPN S2 · Baseline · seed 1 | Completed | 16.2 | 13.1 | 46 / 91 | 271 | 535 |
+| VPN S2 · Baseline · seed 2 | Completed | 21.2 | 51.9 | 54 / 91 | 319 | 535 |
+| VPN S2 · RAFS · seed 0 | Completed | 11.8 | 47.9 | 14 / 17 | 157 | 187 |
+| VPN S2 · RAFS · seed 1 | Completed | 16.2 | 40.9 | 12 / 19 | 133 | 211 |
+| VPN S2 · RAFS · seed 2 | Completed | 21.2 | 49.2 | 12 / 18 | 133 | 204 |
+| App-Time S2 · Baseline · seed 0 | Completed | 9.0 | 14.2 | 10 / 34 | 55 | 199 |
+| App-Version S2 · Baseline · seed 0 | Completed | 12.2 | 22.8 | 17 / 34 | 97 | 199 |
+| App-Time S2 · RAFS · seed 0 | Completed | 9.0 | 27.1 | 15 / 16 | 169 | 176 |
+| App-Version S2 · RAFS · seed 0 | Completed | 12.2 | 29.3 | 15 / 15 | 164 | 164 |
 
-## 汇总（只统计已完成的运行）
+## Summary of completed runs
 
-| 设置 | 原论文表 4（F1⁰(C) → F1*(C)） | 复现原版 F1*(C) | 分组+联合搜索 F1*(C) | 差值 |
+| Setting | Upstream Table 4 (F1⁰(C) → F1*(C)) | Reproduced Baseline F1*(C) | RAFS F1*(C) | Difference |
 |---|---|---:|---:|---:|
 | VPN S2 | 21.2 → 21.1 | 35.5 ± 20.1 (n=3) | 46.0 ± 4.5 (n=3) | 10.5 ± 15.6 (n=3) |
 | App-Time S2 | 8.3 → 22.1 | 14.2 | 27.1 | 12.9 |
 | App-Version S2 | 12.5 → 25.0 | 22.8 | 29.3 | 6.5 |
 
-App 两行是等计算量对比（原版限 34 轮），和原论文表 4（原版跑满 100 轮）不能直接比较；VPN 一行与原论文设置相同。
+The two App rows use matched compute with the baseline capped at 34 rounds, so they are not directly comparable with the 100-round baseline in upstream Table 4. The VPN row follows the upstream configuration.
 
-运行脚本：`run_mlp.sh`；全部结束后出现 `MLP_ALL_DONE`。
+Run MLP experiments with `reproduce.py --model NeuralNetTorch`; see README.md for round limits.

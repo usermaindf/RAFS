@@ -34,11 +34,11 @@
   ],
   "fig3": {
     "labels": [
-      "不删除",
-      "源 IP",
-      "源、目的\nIP",
-      "两个\n时间戳",
-      "IP 地址 +\n两个时间戳"
+      "No removal",
+      "Source IP",
+      "Source/destination IP",
+      "TCP timestamps",
+      "IP addresses + TCP timestamps"
     ],
     "v": [
       14.7,
@@ -5747,23 +5747,23 @@
     ],
     "groups": [
       [
-        "数据泄露型",
+        "Data leakage",
         6
       ],
       [
-        "时间型",
+        "Temporal",
         2
       ],
       [
-        "上下文型",
+        "Contextual",
         7
       ],
       [
-        "主机型",
+        "Host-related",
         2
       ],
       [
-        "其他",
+        "Other",
         13
       ]
     ]

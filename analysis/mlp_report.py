@@ -28,36 +28,36 @@ def status(v, s, d):
     ex, log = os.path.join(HERE, ld, f'{d}.exit'), os.path.join(HERE, ld, f'{d}.log')
     if os.path.exists(ex):
         c = open(ex).read().strip()
-        return ('完成' if c == '0' else f'失败(exit {c})'), compare.one(tag, ld, d, rule='f1') if c == '0' else None
+        return ('Completed' if c == '0' else f'Failed(exit {c})'), compare.one(tag, ld, d, rule='f1') if c == '0' else None
     if os.path.exists(log):
         txt = open(log, encoding='utf-8', errors='replace').read()
         n = len(re.findall(r'\[Timing Summary\]', txt))
-        return f'运行中（第 {n} 轮）' + ('，日志有 Traceback' if 'Traceback' in txt else ''), (compare.one(tag, ld, d, rule='f1') if n else None)
-    return '等待', None
+        return f'Running (Round {n}  rounds)' + (', log contains  Traceback' if 'Traceback' in txt else ''), (compare.one(tag, ld, d, rule='f1') if n else None)
+    return 'Pending', None
 
 
 def main():
-    L = ['# 第 4 步：换成 MLP 分类器（场景 S2，对应 ShortcutCatcher 表 4）', '',
-         f'最后更新：{dt.datetime.now():%Y-%m-%d %H:%M}（运行中每 10 分钟自动刷新；手动：`python mlp_report.py`）', '']
+    L = ['# MLP evaluation in S2 (comparison with ShortcutCatcher Table 4)', '',
+         f'Last updated: {dt.datetime.now():%Y-%m-%d %H:%M} (Regenerate manually with: `python mlp_report.py`)', '']
     if os.path.exists(os.path.join(HERE, 'MLP_ALL_DONE')):
-        L += ['**全部实验已结束。**', '']
-    L += ['设置：AutoGluon NeuralNetTorch 默认超参数，置换重要性，窗口 5（与原论文表 4 相同）。',
-          '- VPN S2：与原论文完全相同（100 轮），MLP 种子 0、1、2，CPU。',
-          '- App-Time / App-Version S2：MLP 单次训练约 200 秒，原版完整跑一次约需 28 小时，因此改为**等计算量对比**：'
-          '原版限 34 轮（约 200 次重训），本文方法跑完为止（约 200 次重训）。只用种子 0，GPU。', '',
-          '| 运行 | 状态 | F1⁰(C) | F1*(C) | 最佳轮 / 已跑轮数 | 到最佳轮的重训次数 | 总重训次数 |', '|---|---|---:|---:|---:|---:|---:|']
+        L += ['**All experiments completed. **', '']
+    L += ['Configuration: AutoGluon NeuralNetTorch defaults, permutation importance, window 5, following upstream Table 4.',
+          '- VPN S2: 100 rounds, MLP seeds 0, 1 and 2, on CPU.',
+          '- App-Time / App-Version S2: recorded training took about 200 seconds per fit; a full baseline search would take about 28 hours. The report uses a **matched-compute comparison**: '
+          'the baseline is capped at 34 rounds (about 200 retrainings), while RAFS runs to completion (about 200 retrainings). This report lists App seed 0 on GPU.', '',
+          '| Run | Status | F1⁰(C) | F1*(C) | Best / completed rounds | Retrainings to best round | Total retrainings |', '|---|---|---:|---:|---:|---:|---:|']
     res = {}
     for v, s, d in JOBS:
         st, r = status(v, s, d)
-        name = f"{DISP[d]} · {'原版' if v.startswith('none') else '分组+联合搜索'} · 种子{s}"
+        name = f"{DISP[d]} · {'Baseline' if v.startswith('none') else 'RAFS'} · seed {s}"
         if r:
-            res[(v, s, d)] = (r, st == '完成')
+            res[(v, s, d)] = (r, st == 'Completed')
             L.append(f"| {name} | {st} | {r['c0']:.1f} | {r['cs']:.1f} | {r['best_round']} / {r['rounds']} | "
                      f"{r['fits_to_best']} | {r['fits_total']} |")
         else:
             L.append(f'| {name} | {st} | | | | | |')
-    L += ['', '## 汇总（只统计已完成的运行）', '',
-          '| 设置 | 原论文表 4（F1⁰(C) → F1*(C)） | 复现原版 F1*(C) | 分组+联合搜索 F1*(C) | 差值 |', '|---|---|---:|---:|---:|']
+    L += ['', '## Summary of completed runs', '',
+          '| Setting | Upstream Table 4 (F1⁰(C) → F1*(C)) | Reproduced Baseline F1*(C) | RAFS F1*(C) | Difference |', '|---|---|---:|---:|---:|']
     for d in DISP:
         o = [res[k][0]['cs'] for k in res if k[0] == 'none_mlp' and k[2] == d and res[k][1]]
         g = [res[k][0]['cs'] for k in res if k[0] == 'grouppair_mlp' and k[2] == d and res[k][1]]
@@ -66,8 +66,8 @@ def main():
                 and res[('grouppair_mlp', s, d)][1] and res[('none_mlp', s, d)][1]]
         f = lambda v: '–' if not v else (f'{np.mean(v):.1f} ± {np.std(v, ddof=1):.1f} (n={len(v)})' if len(v) > 1 else f'{v[0]:.1f}')
         L.append(f'| {DISP[d]} | {PAPER[d][0]} → {PAPER[d][1]} | {f(o)} | {f(g)} | {f(pair)} |')
-    L += ['', 'App 两行是等计算量对比（原版限 34 轮），和原论文表 4（原版跑满 100 轮）不能直接比较；VPN 一行与原论文设置相同。',
-          '', '运行脚本：`run_mlp.sh`；全部结束后出现 `MLP_ALL_DONE`。', '']
+    L += ['', 'The two App rows use matched compute with the baseline capped at 34 rounds, so they are not directly comparable with the 100-round baseline in upstream Table 4. The VPN row follows the upstream configuration.',
+          '', 'Run MLP experiments with `reproduce.py --model NeuralNetTorch`; see README.md for round limits.', '']
     with open(os.path.join(HERE, 'MLP.md'), 'w', encoding='utf-8') as fh:
         fh.write('\n'.join(L))
 

@@ -18,7 +18,7 @@ import seeds_report as R
 
 HERE = os.environ.get('RAFS_LOG_ROOT', os.path.dirname(os.path.abspath(__file__)))
 VPN = [n for n, _ in R.SETTINGS if n.startswith('vpn')]
-CFGS = [('grouppair_k3', 'k=3, w=5'), ('grouppair', 'k=4, w=5（默认）'), ('grouppair_k5', 'k=5, w=5'),
+CFGS = [('grouppair_k3', 'k=3, w=5'), ('grouppair', 'k=4, w=5 (default)'), ('grouppair_k5', 'k=5, w=5'),
         ('grouppair_w3', 'k=4, w=3'), ('grouppair_w7', 'k=4, w=7')]
 
 
@@ -45,24 +45,24 @@ def ms(v):
 
 
 def main():
-    L = ['# 第 3 步：敏感性分析 + VPN 补充种子', '',
-         f'最后更新：{dt.datetime.now():%Y-%m-%d %H:%M}（运行期间每 10 分钟自动刷新；手动刷新：`python sens_report.py`）', '']
+    L = ['# Sensitivity analysis and additional VPN seeds', '',
+         f'Last updated: {dt.datetime.now():%Y-%m-%d %H:%M} (Regenerate manually with: `python sens_report.py`)', '']
     if os.path.exists(os.path.join(HERE, 'SENS_ALL_DONE')):
-        L += ['**全部实验已结束。**', '']
+        L += ['**All experiments completed. **', '']
     # progress
     cnt = {'ok': 0, 'fail': 0, 'run': 0, 'wait': 0}
     jobs = [(v, s, n) for s in range(3, 10) for v in ('grouppair', 'group', 'none') for n in VPN] + \
            [(v, s, n) for s in range(3) for v, _ in CFGS if v != 'grouppair' for n, _ in R.SETTINGS]
     for j in jobs:
         cnt[state(*j)] += 1
-    fails = [f'{v} 种子{s} {n}' for v, s, n in jobs if state(v, s, n) == 'fail']
-    L += [f'进度：共 {len(jobs)} 组；完成 {cnt["ok"]}，运行中 {cnt["run"]}，等待 {cnt["wait"]}，失败 {cnt["fail"]}。', '']
+    fails = [f'{v} seed {s} {n}' for v, s, n in jobs if state(v, s, n) == 'fail']
+    L += [f'Progress: {len(jobs)} runs; Completed {cnt["ok"]}, Running {cnt["run"]}, Pending {cnt["wait"]}, Failed {cnt["fail"]}. ', '']
     if fails:
-        L += ['失败的运行：' + '；'.join(fails), '']
+        L += ['Failed runs: ' + '; '.join(fails), '']
 
     # A) VPN 10 seeds
-    L += ['## A. VPN：10 个 RF 种子（种子 0–2 来自之前的运行）', '',
-          '| 设置 | 原版 | 字段分组 | 分组+联合搜索 | 联合搜索 − 原版（配对） | Wilcoxon p | 胜/负 |',
+    L += ['## A. VPN: 10 RF seeds (seeds 0–2 from the initial runs)', '',
+          '| Setting | Baseline | Field grouping | RAFS | Joint search − Baseline (paired) | Wilcoxon p | Wins/Losses |',
           '|---|---:|---:|---:|---:|---:|---:|']
     allp = []
     for n in VPN:
@@ -76,13 +76,13 @@ def main():
                  f'{np.mean(d):+.1f} | {p:.3g} | {sum(x > 0 for x in d)}/{sum(x < 0 for x in d)} |' if d else
                  f'| {disp} | {ms(v["none"])} | {ms(v["group"])} | {ms(v["grouppair"])} | – | – | – |')
     if len(allp) >= 2:
-        L += [f'| **VPN 全部** | | | | {np.mean(allp):+.1f} | {wilcoxon(allp).pvalue:.3g} | '
+        L += [f'| **VPN All** | | | | {np.mean(allp):+.1f} | {wilcoxon(allp).pvalue:.3g} | '
               f'{sum(x > 0 for x in allp)}/{sum(x < 0 for x in allp)} |']
 
     # B/C) sensitivity
-    L += ['', '## B/C. 超参数敏感性（分组+联合搜索，种子 0–2，check 集 macro-F1）', '',
-          'k = 两两组合的候选字段数（前 k 个字段），w = 每轮测试的单字段数（ShortcutCatcher 原文的 window）。', '',
-          '| 设置 | ' + ' | '.join(d for _, d in CFGS) + ' |', '|---|' + '---:|' * len(CFGS)]
+    L += ['', '## B/C. Hyperparameter sensitivity (RAFS, seeds 0–2, deployment test-set macro F1)', '',
+          'k is the number of top-ranked fields used to form field pairs; w is the number of single-field candidates tested per round (the upstream window parameter).', '',
+          '| Setting | ' + ' | '.join(d for _, d in CFGS) + ' |', '|---|' + '---:|' * len(CFGS)]
     means = {v: [] for v, _ in CFGS}
     fits = {v: [] for v, _ in CFGS}
     for n, disp in R.SETTINGS:
@@ -94,13 +94,13 @@ def main():
                 means[v].append(np.mean([r['cs'] for r in rs]))
                 fits[v].append(np.mean([r['fits_to_best'] for r in rs]))
         L.append(f'| {disp} | ' + ' | '.join(cells) + ' |')
-    L.append('| **平均（3 个种子都完成的设置）** | ' + ' | '.join(
+    L.append('| **Mean over settings with all 3 seeds completed** | ' + ' | '.join(
         f'{np.mean(means[v]):.1f} ({len(means[v])}/9)' if means[v] else '–' for v, _ in CFGS) + ' |')
-    L.append('| **到最佳轮的重训次数（平均）** | ' + ' | '.join(
+    L.append('| **Mean retrainings to the selected round** | ' + ' | '.join(
         f'{np.mean(fits[v]):.0f}' if fits[v] else '–' for v, _ in CFGS) + ' |')
-    L += ['', '参照：原版平均 48.6，字段分组 50.0（见 `SEEDS.md`）。', '',
-          '## 文件', '', '- 运行脚本：`run_sens.sh`；报告：`sens_report.py`；统计检验：`STATS.md`（`stats_tests.py`）',
-          '- 全部结束后会出现 `SENS_ALL_DONE`', '']
+    L += ['', 'Reference means: baseline 48.6; field grouping 50.0 (see SEEDS.md).', '',
+          '## Files', '', '- Run sensitivity experiments with `reproduce.py --pair-top` or `--window`; report: `analysis/sens_report.py`; tests: `analysis/stats_tests.py`.',
+          '- This report reads archived results and exit-status files.', '']
     with open(os.path.join(HERE, 'SENS.md'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(L))
     subprocess.run([sys.executable, os.path.join(HERE, 'stats_tests.py')], capture_output=True)

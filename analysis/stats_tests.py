@@ -21,14 +21,14 @@ import compare
 import seeds_report as R
 
 HERE = os.environ.get('RAFS_LOG_ROOT', os.path.dirname(os.path.abspath(__file__)))
-NAMES = {'none': '原版', 'group': '字段分组', 'grouppair': '分组+联合搜索', 'grouprel': '分组+相对值',
-         'grouppairrel': '分组+联合搜索+相对值', 'groupshift': '分组+偏移感知', 'grouprob': '分组+稳健验证'}
+NAMES = {'none': 'Baseline', 'group': 'Field grouping', 'grouppair': 'RAFS', 'grouprel': 'Grouping + relative features',
+         'grouppairrel': 'RAFS + relative features', 'groupshift': 'Grouping + shift-aware ranking', 'grouprob': 'Grouping + robust verification'}
 COMPARISONS = [  # (method A, method B, scope)
     ('none', 'group', 'all'), ('none', 'grouppair', 'all'), ('group', 'grouppair', 'all'),
     ('none', 'groupshift', 'all'), ('none', 'grouprob', 'all'),
     ('grouppair', 'grouppairrel', 'app'), ('group', 'grouprel', 'app'), ('none', 'grouppairrel', 'app'),
 ]
-SCOPES = {'all': '9 个设置', 'app': 'App 6 个设置', 'vpn': 'VPN 3 个设置'}
+SCOPES = {'all': '9  settings', 'app': 'App 6  settings', 'vpn': 'VPN 3  settings'}
 
 
 def load():
@@ -82,12 +82,12 @@ def stars(p):
 
 def main():
     res = load()
-    L = ['# 统计检验：主要对比的配对显著性', '',
-         f'生成时间：{dt.datetime.now():%Y-%m-%d %H:%M}。脚本：`stats_tests.py`（数据与 `SEEDS.md` 相同）。', '',
-         '配对单位是"设置 × RF 种子"。所有方法使用相同的数据划分、相同的种子和相同的最终轮选择规则。'
-         '检验为双侧 Wilcoxon 符号秩检验，同一张表内用 Holm 方法校正多重比较。'
-         '第 1 节中，VPN 上的原版 / 字段分组 / 分组+联合搜索在补充种子跑完后使用 10 个种子（0–9），其他情况都是 3 个种子；第 2、3 节固定用种子 0–2。'
-         '显著性标记：*** p<0.001，** p<0.01，* p<0.05，n.s. 不显著（均按校正后 p）。', '']
+    L = ['# Paired statistical tests for the main comparisons', '',
+         f'Generated: {dt.datetime.now():%Y-%m-%d %H:%M}. Script: `stats_tests.py`(same archived measurements as SEEDS.md). ', '',
+         'The pairing unit is setting × RF seed. Data splits and seeds are matched across methods, using the documented final-round selection rules. '
+         'Tests use the two-sided Wilcoxon signed-rank test, with Holm correction within each table. '
+         'Section 1 uses 10 VPN seeds (0–9) for the baseline, field grouping and RAFS; other comparisons use 3 seeds. Sections 2 and 3 use seeds 0–2. '
+         'Significance: *** p<0.001, ** p<0.01, * p<0.05; n.s. denotes non-significance, based on adjusted p-values.', '']
 
     # ---------------- accuracy
     rows, ps = [], []
@@ -105,16 +105,16 @@ def main():
                          f'{wins}/{ties}/{len(d) - wins - ties}', p_sign, p])
             ps.append(p)
     adj = holm(np.array(ps))
-    L += ['## 1. 部署场景 check 集 macro-F1：配对差值（B − A）', '',
-          '| 对比（B vs A） | 范围 | n | 平均差值 | 95% bootstrap 区间 | 胜/平/负 | 符号检验 p | Wilcoxon p | Holm 校正后 p | 结论 |',
+    L += ['## 1. Deployment test-set macro F1: paired differences (B − A)', '',
+          '| Comparison (B vs A) | Scope | n | Mean difference | 95% bootstrap CI | Wins/Ties/Losses | Sign test p | Wilcoxon p | Holm adjusted p | Significance |',
           '|---|---|---:|---:|---|---|---:|---:|---:|---|']
     for r, pa in zip(rows, adj):
         L.append(f'| {r[0]} | {r[1]} | {r[2]} | {r[3]:+.2f} | [{r[4]:+.2f}, {r[5]:+.2f}] | {r[6]} | '
                  f'{r[7]:.3g} | {r[8]:.3g} | {pa:.3g} | {stars(pa)} |')
 
     # ---------------- stability
-    L += ['', '## 2. 稳定性：每个设置的跨种子标准差和最差种子（Wilcoxon，配对单位为设置）', '',
-          '| 对比（B vs A） | 范围 | 设置数 | 标准差 A → B（平均） | p（标准差） | 最差种子 A → B（平均） | p（最差种子） |',
+    L += ['', '## 2. Stability: cross-seed SD and worst-seed performance (Wilcoxon; pairing unit: setting)', '',
+          '| Comparison (B vs A) | Scope | Settings | SD A → B (Mean) | p (SD) | Worst seed A → B (Mean) | p (Worst seed) |',
           '|---|---|---:|---|---:|---|---:|']
     srows, sps = [], []
     for a, b, scope in [('none', 'group', 'all'), ('none', 'grouppair', 'all'), ('group', 'grouppair', 'all'),
@@ -136,12 +136,12 @@ def main():
     for k, r in enumerate(srows):
         L.append(f'| {NAMES[r[1]]} vs {NAMES[r[0]]} | {SCOPES[r[2]]} | {r[3]} | {r[4]:.1f} → {r[5]:.1f} | '
                  f'{sadj[2 * k]:.3g} {stars(sadj[2 * k])} | {r[6]:.1f} → {r[7]:.1f} | {sadj[2 * k + 1]:.3g} {stars(sadj[2 * k + 1])} |')
-    L += ['', '只有 3 个种子时，单个设置内的标准差本身就不精确；设置数只有 3 到 9 个时，Wilcoxon 的最小可达 p 值也有限'
-          '（n=3 时为 0.25，n=6 时为 0.031，n=9 时为 0.0039），所以这一节只作参考。']
+    L += ['', 'With only 3 seeds, within-setting SD estimates are imprecise. With only 3–9 settings, the attainable Wilcoxon p-values are also limited'
+          ' (0.25 at n=3, 0.031 at n=6, and 0.0039 at n=9). Treat this section as exploratory.']
 
     # ---------------- efficiency
-    L += ['', '## 3. 效率：到最佳轮为止的重训次数（配对单位为"设置 × 种子"）', '',
-          '| 对比（B vs A） | n | A 平均 | B 平均 | B / A | Wilcoxon p |', '|---|---:|---:|---:|---:|---:|']
+    L += ['', '## 3. Efficiency: retrainings through the selected round (pairing unit: setting × seed)', '',
+          '| Comparison (B vs A) | n | A Mean | B Mean | B / A | Wilcoxon p |', '|---|---:|---:|---:|---:|---:|']
     for a, b in [('none', 'group'), ('none', 'grouppair'), ('group', 'grouppair')]:
         xa, xb = [], []
         for n, _ in R.SETTINGS:

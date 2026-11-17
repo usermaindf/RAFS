@@ -13,7 +13,7 @@ HERE = os.environ.get('RAFS_LOG_ROOT', os.path.dirname(os.path.abspath(__file__)
 REPO = os.environ.get('RAFS_RESULTS_ROOT', os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'results')))
 SUB = 'soft_window-0.0-5/dataset/RandomForestGini-removal-0.15-default'
 SETTINGS = [('vpn-service', 'VPN'), ('app53-time', 'App-Time'), ('app53-version', 'App-Version')]
-VARIANTS = [('none', '原版 ShortcutCatcher', 'logs'), ('group', '+ 协议字段分组', 'logs_group')]
+VARIANTS = [('none', 'Original ShortcutCatcher', 'logs'), ('group', '+ Protocol-field grouping', 'logs_group')]
 
 
 def rows(p):
@@ -72,13 +72,13 @@ def one(variant, logdir, name, rule=None):
 
 
 def main():
-    L = ['# 模块替换对比：原版 vs 协议字段分组', '',
-         f'最后更新：{dt.datetime.now():%Y-%m-%d %H:%M}。运行 `python compare.py` 刷新。', '',
-         '指标说明：', '',
-         '- F1*(C)：部署场景 check 集的 macro-F1，取验证集最好的那一轮，与官方 `evaluate/table2.py` 相同',
-         '- 到最佳轮的重训次数：从开始到选出最佳轮，一共重新训练了多少次模型（越少越省算力）',
-         '- 到最佳轮耗时：同一台机器上的时间（分钟），只适合同机比较', '',
-         '| 设置 | 方法 | 状态 | F1⁰(C) | F1*(C) | 最佳轮 / 总轮数 | 到最佳轮的重训次数 | 总重训次数 | 到最佳轮耗时（分钟） |',
+    L = ['# Module comparison: ShortcutCatcher versus protocol-field grouping', '',
+         f'Last updated: {dt.datetime.now():%Y-%m-%d %H:%M}. Run `python analysis/compare.py` to refresh. ', '',
+         'Metric definitions: ', '',
+         '- F1*(C): deployment test-set macro F1-score at the round selected by validation F1, following the upstream `evaluate/table2.py` rule',
+         '- Retrainings to best round: number of model retrainings through the selected round; smaller values indicate lower training cost',
+         '- Time to best round: wall-clock time in minutes, comparable only on the same machine', '',
+         '| Setting | Method | Status | F1⁰(C) | F1*(C) | Best / total rounds | Retrainings to best round | Total retrainings | Time to best round (minutes) |',
          '|---|---|---|---:|---:|---:|---:|---:|---:|']
     removed = []
     for prefix, disp in SETTINGS:
@@ -87,15 +87,15 @@ def main():
             for var, vdisp, logdir in VARIANTS:
                 r = one(var, logdir, name)
                 if r is None:
-                    L.append(f'| {disp} {s.upper()} | {vdisp} | 未开始 | | | | | | |')
+                    L.append(f'| {disp} {s.upper()} | {vdisp} | Not started | | | | | | |')
                     continue
-                st = '完成' if r['done'] else '运行中'
+                st = 'Completed' if r['done'] else 'Running'
                 L.append(f"| {disp} {s.upper()} | {vdisp} | {st} | {r['c0']:.1f} | {r['cs']:.1f} | "
                          f"{r['best_round']} / {r['rounds']} | {r['fits_to_best']} | {r['fits_total']} | {r['min_to_best']:.1f} |")
                 removed.append((f'{disp} {s.upper()}', vdisp, r['removed']))
-    L += ['', '## 最佳轮时被删除的特征', '']
+    L += ['', '## Features removed at the selected round', '']
     for n, v, rm in removed:
-        L.append(f"- {n}，{v}（{len(rm)} 项）：{', '.join(rm) if rm else '无'}")
+        L.append(f"- {n}, {v} ({len(rm)} features): {', '.join(rm) if rm else 'None'}")
     with open(os.path.join(HERE, 'COMPARE.md'), 'w', encoding='utf-8') as f:
         f.write('\n'.join(L) + '\n')
 
